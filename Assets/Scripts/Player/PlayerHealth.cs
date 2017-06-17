@@ -15,39 +15,39 @@ public class PlayerHealth : MonoBehaviour
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 
 
-    Animator anim;
-    AudioSource playerAudio;
-    PlayerMovement playerMovement;
+    private Animator anim;
+    private AudioSource playerAudio;
+    private PlayerMovement playerMovement;
     //PlayerShooting playerShooting;
-    bool isDead;
-    bool damaged;
+    private bool isDead;
+    private bool damaged;
 
 
-    void Awake ()
+    private void Awake()
     {
-        anim = GetComponent <Animator> ();
-        playerAudio = GetComponent <AudioSource> ();
-        playerMovement = GetComponent <PlayerMovement> ();
+        anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
+        playerMovement = GetComponent<PlayerMovement>();
         //playerShooting = GetComponentInChildren <PlayerShooting> ();
         currentHealth = startingHealth;
     }
 
 
-    void Update ()
+    private void Update()
     {
-        if(damaged)
+        if (damaged)
         {
             damageImage.color = flashColour;
         }
         else
         {
-            damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
         damaged = false;
     }
 
 
-    public void TakeDamage (int amount)
+    public void TakeDamage(int amount)
     {
         damaged = true;
 
@@ -55,33 +55,33 @@ public class PlayerHealth : MonoBehaviour
 
         healthSlider.value = currentHealth;
 
-        playerAudio.Play ();
+        playerAudio.Play();
 
-        if(currentHealth <= 0 && !isDead)
+        if (currentHealth <= 0 && !isDead)
         {
-            Death ();
+            Death();
         }
     }
 
 
-    void Death ()
+    private void Death()
     {
         isDead = true;
 
         //playerShooting.DisableEffects ();
 
-        anim.SetTrigger ("Die");
+        anim.SetTrigger("Die");
 
         playerAudio.clip = deathClip;
-        playerAudio.Play ();
+        playerAudio.Play();
 
         playerMovement.enabled = false;
         //playerShooting.enabled = false;
     }
 
 
-    public void RestartLevel ()
+    public void RestartLevel()
     {
-        SceneManager.LoadScene (0);
+        SceneManager.LoadScene(0);
     }
 }
