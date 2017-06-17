@@ -41,8 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         var camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit floorHit;
-        //if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
-        if (Physics.Raycast(camRay, out floorHit, floorMask))
+        if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
         {
             var playerToMouse = floorHit.point - transform.position;
             playerToMouse.y = 0f;
