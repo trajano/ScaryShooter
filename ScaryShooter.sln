@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaryShooter", "ScaryShooter.csproj", "{0756FC58-EAAA-2A08-ACF1-1A940B70EF15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaryShooter.Editor", "ScaryShooter.Editor.csproj", "{3F27E8BD-EC06-6AB9-D093-DF9FB8B635AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0756FC58-EAAA-2A08-ACF1-1A940B70EF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0756FC58-EAAA-2A08-ACF1-1A940B70EF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0756FC58-EAAA-2A08-ACF1-1A940B70EF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0756FC58-EAAA-2A08-ACF1-1A940B70EF15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F27E8BD-EC06-6AB9-D093-DF9FB8B635AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F27E8BD-EC06-6AB9-D093-DF9FB8B635AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F27E8BD-EC06-6AB9-D093-DF9FB8B635AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F27E8BD-EC06-6AB9-D093-DF9FB8B635AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
