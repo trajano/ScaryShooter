@@ -471,6 +471,18 @@ Prefab:
       propertyPath: HideOnRelease
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 144978, guid: 943b21e331e945146beb63726ff855df, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144978, guid: 943b21e331e945146beb63726ff855df, type: 2}
+      propertyPath: m_TagString
+      value: Touch Control
+      objectReference: {fileID: 0}
+    - target: {fileID: 144978, guid: 943b21e331e945146beb63726ff855df, type: 2}
+      propertyPath: m_Name
+      value: Move
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943b21e331e945146beb63726ff855df, type: 2}
   m_IsPrefabParent: 0
@@ -916,7 +928,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 100
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1016,6 +1028,7 @@ RectTransform:
   - {fileID: 1343074442}
   - {fileID: 874928743}
   - {fileID: 978553207}
+  - {fileID: 1999775390}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1816,8 +1829,8 @@ GameObject:
   - component: {fileID: 1859797340}
   - component: {fileID: 1859797339}
   m_Layer: 5
-  m_Name: Joystick (1)
-  m_TagString: Untagged
+  m_Name: Aim
+  m_TagString: Touch Control
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1920,15 +1933,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1999775390}
   - component: {fileID: 1999775389}
-  - component: {fileID: 1999775388}
   - component: {fileID: 1999775387}
+  - component: {fileID: 1999775391}
   m_Layer: 5
   m_Name: Touch Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1999775387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1945,27 +1958,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1999775388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1999775386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
 --- !u!223 &1999775389
 Canvas:
   m_ObjectHideFlags: 0
@@ -1992,20 +1984,31 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1999775386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 555122736}
   - {fileID: 1859797338}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1077773971}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 243}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1999775391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999775386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f533e4d4a6806d54a8cc8f729d2e4245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2041083407 stripped
 Transform:
   m_PrefabParentObject: {fileID: 450098, guid: 149d6dcc67e8d1240bbc0dd6ddf0c1bd, type: 2}

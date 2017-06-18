@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRigidBody;
     private int floorMask;
     private float camRayLength = 100f;
-    public GameObject joystickArea;
 
     private void Awake()
     {
