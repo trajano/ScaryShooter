@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using CnControls;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRigidBody;
     private int floorMask;
     private float camRayLength = 100f;
+    public GameObject joystickArea;
 
     private void Awake()
     {
@@ -23,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var h = Input.GetAxisRaw("Horizontal");
-        var v = Input.GetAxisRaw("Vertical");
+        var h = CnInputManager.GetAxisRaw("Horizontal");
+        var v = CnInputManager.GetAxisRaw("Vertical");
         Move(h, v);
         Turning();
         Animating(h, v);
@@ -39,14 +41,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void Turning()
     {
-        var camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit floorHit;
-        if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
+        if (DeviceType.Handheld == SystemInfo.deviceType)
         {
-            var playerToMouse = floorHit.point - transform.position;
-            playerToMouse.y = 0f;
-            var newRotation = Quaternion.LookRotation(playerToMouse);
+            var h = CnInputManager.GetAxis("Aim Horizontal");
+            var v = CnInputManager.GetAxis("Aim Vertical");
+            var newRotation = Quaternion.LookRotation(new Vector3(h, 0f, v));
             playerRigidBody.MoveRotation(newRotation);
+        }
+        else
+        {
+            var camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit floorHit;
+            if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
+            {
+                var playerToMouse = floorHit.point - transform.position;
+                playerToMouse.y = 0f;
+                var newRotation = Quaternion.LookRotation(playerToMouse);
+                playerRigidBody.MoveRotation(newRotation);
+            }
         }
     }
 
