@@ -302,7 +302,8 @@ AudioSource:
   m_GameObject: {fileID: 511580799}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300000, guid: 5b84db49d40ea449aa4f3e3bd229ab5b,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 4fff99673a41e24439d527ad0bd6b569, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
@@ -464,6 +465,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22450750, guid: 943b21e331e945146beb63726ff855df, type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421910, guid: 943b21e331e945146beb63726ff855df, type: 2}
+      propertyPath: HideOnRelease
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1253,11 +1258,6 @@ Prefab:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 509388715}
-    - target: {fileID: 114373655505253890, guid: 0a7d969819ee9ff43bb3f92289848252,
-        type: 2}
-      propertyPath: joystickArea
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a7d969819ee9ff43bb3f92289848252, type: 2}
   m_IsPrefabParent: 0
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   MovementRange: 50
   HorizontalAxisName: Aim Horizontal
   VerticalAxisName: Aim Vertical
-  HideOnRelease: 1
+  HideOnRelease: 0
   MoveBase: 1
   SnapsToFinger: 1
   JoystickMoveAxis: 3
@@ -1928,7 +1928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1999775387
 MonoBehaviour:
   m_ObjectHideFlags: 0
